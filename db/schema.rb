@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_26_014843) do
+ActiveRecord::Schema.define(version: 2019_09_26_021406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(version: 2019_09_26_014843) do
   create_table "despesas", force: :cascade do |t|
     t.string "nome"
     t.string "descricao"
-    t.string "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "valor"
   end
 
   create_table "fornecedores", force: :cascade do |t|
@@ -72,9 +72,9 @@ ActiveRecord::Schema.define(version: 2019_09_26_014843) do
   create_table "receitas", force: :cascade do |t|
     t.string "nome"
     t.string "descricao"
-    t.string "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "valor"
   end
 
   add_foreign_key "pedido_produtos", "pedidos"

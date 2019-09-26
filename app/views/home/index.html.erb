@@ -1,1 +1,11 @@
 <h1>Bem vindo</h1>
+<hr>
+
+<h3>Valor total de receitas: <span style="color: green"><%= number_to_currency(@receitas, :unit => "R$") %></span></h3>
+<h3>Valor total de despesas: <span style="color: red"><%= number_to_currency(@despesas, :unit => "R$") %></span></h3>
+<h3>Valor total de pedidos: <span style="color: green"><%= number_to_currency(@pedidos, :unit => "R$") %></span></h3>
+<hr>
+
+
+<% valor_total = (@receitas - @despesas + @pedidos) %>
+<h1>Total: <span style="color: <% if valor_total < 0 %>red;<% else %>green;<% end %>"><%= number_to_currency(valor_total, :unit => "R$") %></span></h1>
