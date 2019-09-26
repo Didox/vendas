@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :receitas
+  resources :despesas
   resources :fornecedores
   resources :produtos
   resources :clientes
