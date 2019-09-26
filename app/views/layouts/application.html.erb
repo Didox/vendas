@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Starter Template for Bootstrap</title>
+  <title>Sistema de vendas</title>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -33,6 +33,7 @@
         <ul class="nav navbar-nav">
           <li <% if params[:controller] == "home" %>class="active"<% end %>><a href="/">Caixa</a></li>
           <li <% if params[:controller] == "clientes" %>class="active"<% end %>><a href="/clientes">Clientes</a></li>
+          <li <% if params[:controller] == "produtos" %>class="active"<% end %>><a href="/produtos">Produtos</a></li>
         </ul>
       </div>
     </div>
