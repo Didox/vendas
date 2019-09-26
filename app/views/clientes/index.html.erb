@@ -6,14 +6,27 @@
   <h1>Lista</h1>
 </div>
 
+
+<div style="text-align: right;margin-top:10px">
+  <form action="/clientes" method="get">
+    <div class="row" style="width:300px;display: inline-block;">
+      <div style="float: left">
+        <input type="text" name="nome" value="<%= params[:nome] %>" class="form-control" placeholder="Busca ..">
+      </div>
+      <div style="float: left;margin-left:5px">
+        <input type="submit" class="btn btn-primary" value="Buscar"></div>
+    </div>
+  </form>
+</div>
+<hr>
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-            <th>Nome</th>
-            <th>Telefone</th>
-            <th>Email</th>
-            <th></th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Email</th>
+        <th></th>
         <th></th>
         <th></th>
       </tr>
@@ -21,13 +34,16 @@
 
     <tbody>
       <%= content_tag_for(:tr, @clientes) do |cliente| %>
-            <td><%= cliente.nome %></td>
-            <td><%= cliente.telefone %></td>
-            <td><%= cliente.email %></td>
-            <td><%= link_to 'Mostrar', cliente %></td>
+        <td><%= cliente.nome %></td>
+        <td><%= cliente.telefone %></td>
+        <td><%= cliente.email %></td>
+        <td><%= link_to 'Mostrar', cliente %></td>
         <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
         <td><%= link_to 'Apagar', cliente, method: :delete, data: { confirm: 'Confirma?' } %></td>
       <% end %>
     </tbody>
   </table>
+  <div class="apple_pagination">
+    <%= will_paginate @concursos, :container => false %>
+  </div>
 </div>
